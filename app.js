@@ -1,3 +1,5 @@
+
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -24,24 +26,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-
-var SpotifyWebApi = require('spotify-web-api-node');
-console.log(SpotifyWebApi);
-
-//36bb20a3bfe542b2a3ff404bcb4c6632
-
-var spotifyApi = new SpotifyWebApi({
-  clientId : '36bb20a3bfe542b2a3ff404bcb4c6632',
-  clientSecret : '5a5b586ce56e4655a5007286a765ca9d'
-});
-
-spotifyApi.getPlaylistTracks('bullar77','3V0JjDddnOl15pEKywYZwW')
-  .then(function(data) {
-    console.log('getPlaylistTracks : ', data.body);
-  }, function(err) {
-    console.error(err);
-  });
-console.log(spotifyApi);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,5 +1,19 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  #commands
+    h1 Play songs through voice commands
+    p
+      | This demo uses speech recognition and the 
+      a(href='https://developer.spotify.com/web-api/') Spotify Web API
+      |  to play songs. Try it using some of the commands below. Remember to allow the use of the microphone.
+    p For instance "Play Some Nights"
+    h2 Voice commands
+    ul
+      li Play {song name}
+      li Play {song name} by {artist name}
+  #conversation
+footer
+  | This demo uses the Spotify Web API and the library 
+  a(href='https://github.com/TalAter/annyang') annyang
+  |  to make it easy to match recognised text with rules.
